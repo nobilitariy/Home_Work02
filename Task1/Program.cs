@@ -1,31 +1,41 @@
-﻿void Print(string text);
+﻿void Print(string text)
 {
     Console.WriteLine(text);
 }
-
-int GetNumber()
+/*
+double GetNumber()
 {
-    int number = Convert.ToInt32(ReadLine());
+    double number = Convert.ToInt32(Console.ReadLine());
     return number;
 }
 
-bool GetPolindr(int number);
+bool GetPolindr(double number)
 {
-    if(numberr>100 && number<1000)
+    if(number > 99 && number < 1000)
     {
-        if(number%10 == numberr/100)
-        return true;
-        else 
-        return false;
-    }
-    if(number>1000 && number<10000)
+        if(number % 10 == number / 100) return true;
+        else return false;      
+    } 
+    else if(number > 999 && number < 10000)
     {
-        if(number%10 == number/1000 && number/10%10 == number/100%10)
-        return true;
-        else
-        return false;
+        if(number % 10 == number / 1000 && number / 10 % 10 == number / 100 % 10) return true;
+        else return false;
     }
+    return false;
 }
-Print("Inter number: ");
-GetNumber();
-GetPolindr(GetNumber);
+*/
+
+double GetPolindr(double number)
+{
+    double res = 0;
+    while(number > 0)
+    {
+        number = number % 10;
+        res = res * 10 + number;
+        number = number / 10;       
+    }  
+}
+//Print("Inter number: ");
+double result = GetPolindr(565);
+Print($"{result}");
+
