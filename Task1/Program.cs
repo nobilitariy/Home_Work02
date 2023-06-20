@@ -3,26 +3,41 @@
     Console.WriteLine(text);
 }
 
-double GetNumber()
+int GetNumber()
 {
-    double number = Convert.ToInt32(Console.ReadLine());
+    int number = Convert.ToInt32(Console.ReadLine());
     return number;
 }
 
-double ReversеNumber(double number)
+int ReversеNumber(int number)
 {
-    double res = 0;
+    int res = 0;
     while(number > 0)
     {
-        double digit = number % 10;
+        int digit = number % 10;
         res = res * 10 + digit;
         number = number / 10;     
     }
     return res;
 }
+ 
+bool GetPolindrome(int reversNum, int number)
+{
+    if(reversNum == number)
+    {
+        Console.WriteLine($"{number} palindrome");
+        return true;
+    }
+    else
+    {
+        Console.WriteLine($"{number} not polindrome");
+        return true;
+    }
+    
+}
 
 Print("Inter number: ");
-double num = GetNumber();
-double result = ReversеNumber(num);
-Print($"{result}");
+int num = GetNumber();
+int result = ReversеNumber(num);
+GetPolindrome(result, num);
 
